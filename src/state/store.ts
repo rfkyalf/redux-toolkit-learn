@@ -10,12 +10,11 @@ const persistConfig = {
 };
 
 const persistedCounterReducer = persistReducer(persistConfig, counterReducer);
-const persistedPostsReducer = persistReducer(persistConfig, postsReducer);
 
 export const store = configureStore({
   reducer: {
     counter: persistedCounterReducer,
-    posts: persistedPostsReducer,
+    posts: postsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
